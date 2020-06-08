@@ -1,10 +1,7 @@
 window.onload = function(){
-        alert(13213123123123);
     let img  = document.getElementById("myImage");
     let ul = document.getElementById("list-menu");
-    // console.log(img);
     img.onclick = function() {
-        alert(1313);
        if(this.src.split('-')[1] == "hamburger.svg")
         {
             this.src = "./images/icon-close.svg";
