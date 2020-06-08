@@ -1,0 +1,364 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;1,300&display=swap')
+$dark: hsl(233, 26%, 24%)
+$limeGreen: hsl(136, 65%, 51%)
+$brightCyan: hsl(192, 70%, 51%)
+$grayishBlue: hsl(233, 8%, 62%)
+$lightGrayishBlue: hsl(220, 16%, 96%)
+$veryLightGray: hsl(0, 0%, 98%)
+$white: hsl(0, 0%, 100%)
+
+$fontSize: 18px
+
+$mobile: 375px
+$desktop: 1440px
+
+html, body
+    overflow-x: hidden
+    margin: 0
+    font-size: $fontSize
+    font-family: 'Public Sans', sans-serif
+
+@mixin accentLinear
+    background-image: linear-gradient(to bottom right, $limeGreen, $brightCyan)
+
+section.landing-page-section
+    padding: 3rem 0
+
+.bg-medium
+    background-color: $lightGrayishBlue
+
+.button
+    display: block
+    box-sizing: border-box
+    border: none
+    font-size: 1rem
+    padding: .7rem 1.5rem
+    border-radius: 3rem
+    color: white
+
+    &-accent
+        @include accentLinear
+.invite:hover
+    opacity: .5
+header
+    position: fixed
+    top: 0
+    width: 100%
+    background-color: white
+    z-index: 1000
+
+nav.main-nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .hamburger-wrapper
+        display: none
+
+    ul
+        display: flex
+        margin: 0
+
+        li
+            list-style-type: none
+            padding: 1.5rem 0
+            margin: 0 1rem
+            position: relative
+
+            &:hover
+                &::after
+                    position: absolute
+                    content: ' '
+                    width: 100%
+                    height: 4px
+                    background-color: $limeGreen
+                    bottom: 0
+                    left: 0
+
+            a
+                text-decoration: none
+                color: $grayishBlue
+
+.banner
+    position: relative
+    display: flex
+    flex-direction: row-reverse
+
+    .banner-info-container
+        transform: translateY(60%)
+        max-width: 500px
+        display: flex
+        flex-direction: column
+
+        .banner-subtitle
+            color: $grayishBlue
+            margin-bottom: 1.5rem
+
+    .upper-img
+        position: absolute
+        top: -62px
+        right: -133px
+
+    .image-wrapper
+        flex-shrink: 0
+        width: 50%
+        height: 700px
+
+        .bg1-container
+            overflow: hidden
+            height: 100%
+
+            .bg1
+                position: absolute
+                top: -170px
+                right: -360px
+                height: 950px
+
+    &-info
+        position: absolute
+        width: 100%
+        height: 100%
+
+.feature
+    display: inline-flex
+    flex-direction: column
+    padding-top: 1rem
+    padding-bottom: 1rem
+
+    .icon-circle
+        $side: 80px
+        width: $side
+        height: $side
+
+        img
+            width: 100%
+            height: 100%
+
+    &__title
+        font-size: 1rem
+        margin-top: 1rem
+        margin-bottom: 1rem
+        color: black
+
+    &__description
+        font-size: .8rem
+        color: $grayishBlue
+
+.latest-article
+    background-color: white
+    border-radius: .5rem
+    overflow: hidden
+
+    &-list
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-gap: 1.5rem
+
+    .image-wrapper
+        height: 200px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__content
+        padding: 1rem
+
+    &__author
+        display: block
+        margin: 0 0 1rem
+        font-size: .8rem
+        color: $grayishBlue
+
+    &__title
+        font-size: 1rem
+        margin: 0
+
+    &__subtitle
+        display: block
+        font-size: .8rem
+        color: $grayishBlue
+        margin-top: 1rem
+
+.section-title
+    font-size: 1.5rem
+
+.section-subtitle
+    display: block
+    color: $grayishBlue
+    margin-bottom: 3rem
+
+.container
+    max-width: $desktop
+    margin: auto
+    padding: 0rem 2rem
+    box-sizing: border-box
+
+footer
+    background-color: $dark
+    .container
+        display: flex
+        padding-top: 2rem
+        padding-bottom: 2rem
+    .icon-item
+        height: 22px
+        width: 22px
+        display: inline-block
+        margin:     10px
+
+    #icon-item-facebook
+        background: url("../images/icon-facebook.svg") no-repeat
+    #icon-item-facebook:hover
+        background: url("../images/footer/icon-facebook.svg") no-repeat
+    #icon-item-youtube
+        background: url("../images/icon-youtube.svg") no-repeat
+    #icon-item-youtube:hover
+        background: url("../images/footer/icon-youtube.svg") no-repeat
+    #icon-item-twitter
+        background: url("../images/icon-twitter.svg") no-repeat
+    #icon-item-twitter:hover
+        background: url("../images/footer/icon-twitter.svg") no-repeat
+    #icon-item-pinterest
+        background: url("../images/icon-pinterest.svg") no-repeat
+    #icon-item-pinterest:hover
+        background: url("../images/footer/icon-pinterest.svg") no-repeat
+    #icon-item-instagram
+        background: url("../images/icon-instagram.svg") no-repeat
+    #icon-item-instagram:hover
+        background: url("../images/footer/icon-instagram.svg") no-repeat
+    .footer-left
+        width: 50%
+        display: flex
+        justify-content: space-between
+    .footer-right
+        width: 50%
+        text-align: right
+        height: 6rem
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        div
+            display: flex
+            justify-content: flex-end
+        span 
+            color: $grayishBlue
+    .contact, .logo-icon
+        height: 6rem
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    .contact-item
+        color: $lightGrayishBlue
+    .contact-item:hover
+        color: $limeGreen
+
+
+@media screen and ( max-width: $mobile )
+    .button
+        margin: auto
+    nav.main-nav
+        .brand-logo
+            img
+                height: 16px
+        ul
+            position: fixed
+            top: 70px
+            left: 10vw
+            width: 80vw
+            height: 300px
+            padding: 10px 0
+            margin: auto
+            display: none
+            flex-direction: column
+            justify-content: space-around
+            z-index: 1
+            background-color: $white
+            text-align: center
+            li 
+                padding: 0
+                margin: auto
+                a 
+                    color: $dark
+                    font-weight: 400
+
+        .invite
+            display: none
+
+        .hamburger-wrapper
+            display: block
+
+    .container
+        padding: 1rem
+
+    .latest-article-list
+        grid-template-columns: 1fr
+
+    .section-title
+        text-align: center
+
+    .feature
+        align-items: center
+
+        &__description
+            text-align: center
+
+    .banner
+        flex-direction: column
+        height: auto
+
+        &-info
+            position: static
+            margin-top: 3rem
+        
+            &-container
+                transform: translateY(0) !important
+                
+
+        .container
+            align-items: center !important
+            text-align: center
+
+        .image-wrapper
+            height: auto
+
+            .bg1-container
+                height: 340px
+                overflow: hidden
+
+                img
+                    top: 56px !important
+                    height: 584px !important
+                    transform: translate(-107px, -251px)
+
+            .upper-img
+
+                right: .5rem
+                top: -66px
+                width: calc(100vw - 1rem)
+    footer
+        .container
+            display: flex
+            flex-direction: column
+        .footer-left
+            width: 320px
+            margin: 30px auto
+            display: flex
+            flex-direction: column
+            text-align: center
+            img
+                width: 150px
+                margin: auto
+            .contact
+                margin: 15px auto
+        .footer-right
+            width: 320px
+            margin: auto
+            text-align: center
+            
+            div
+                justify-content: center
+        .icon-item
+            background-size: 150%
+            margin: .5rem
+       
