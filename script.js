@@ -1,7 +1,6 @@
 window.onload = function(){
     let img  = document.getElementById("myImage");
     let ul = document.getElementById("list-menu");
-    // console.log(img);
     img.onclick = function() {
         let nameImg = this.src.split('-');
         if(nameImg[nameImg.length-1] == "hamburger.svg")
