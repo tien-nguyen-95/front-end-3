@@ -3,7 +3,8 @@ window.onload = function(){
     let ul = document.getElementById("list-menu");
     // console.log(img);
     img.onclick = function() {
-       if(this.src.split('-')[1] == "hamburger.svg")
+        let nameImg = this.src.split('-');
+        if(nameImg[nameImg.length-1] == "hamburger.svg")
         {
             this.src = "./images/icon-close.svg";
             ul.style.display = "flex";
